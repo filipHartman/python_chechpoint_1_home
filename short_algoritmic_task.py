@@ -4,8 +4,22 @@ def print_three_digit_numbers():
             print(number)
 
 
-def main():
-    print_three_digit_numbers()
+def compare_words(*word):
+    index = 0
+    max_lenght = 0
+    for i in word:
+        if max_lenght < len(i):
+            max_lenght = len(i)
+            index = word.index(i)
+            print(max_lenght, "\n", index)
+
+    print("\n", word, "\n")
+    print ("The longest word: ", word[index])
 
 if __name__ == '__main__':
-    main()
+        # print_three_digit_numbers()
+
+        word1 = input("First word: ")
+        word2 = input("Second word: ")
+        word3 = input("Third word: ")
+        compare_words(word1, word2, word3)
