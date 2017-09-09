@@ -32,9 +32,30 @@ def compare_results(attacker_rolls, defender_rolls):
     return attacker_loss, defender_loss
 
 
+def input_numbers_of_rolls():
+    while True:
+        try:
+            rolls_attack = int(input("How many units attack: "))
+            if rolls_attack in range(1, 4):
+                break
+        except ValueError:
+            pass
+
+    while True:
+        try:
+            rolls_defence = int(input("How many units defence: "))
+            if rolls_defence in range(1, 3):
+                break
+        except ValueError:
+            pass
+
+    return(rolls_attack, rolls_defence)
+
+
 def main():
-    attacker = generate_random_numbers(3)
-    defender = generate_random_numbers(2)
+    rolls_attack, rolls_defence = input_numbers_of_rolls()
+    attacker = generate_random_numbers(rolls_attack)
+    defender = generate_random_numbers(rolls_defence)
 
     attacker_loss, defender_loss = compare_results(attacker, defender)
 
