@@ -77,14 +77,28 @@ def change_hundreds_number(roman_main_chars, arabic_number):
         return roman_main_chars[100] + roman_main_chars[500]
 
 
+def area_from_coordinates():
+    print("coordinates of trinagle to calculate area of it")
+    a = int(input("Enter x for point A: "))
+    b = int(input("Enter y for point A: "))
+    c = int(input("Enter x for point B: "))
+    d = int(input("Enter y for point B: "))
+    e = int(input("Enter x for point C: "))
+    f = int(input("Enter y for point C: "))
+
+    area = abs(((a*(d-f)+c*(f-b)+e*(b-d))/2))
+    return area
+
 def main():
     # print_three_digit_numbers()
     # word1 = input("First word: ")
     # word2 = input("Second word: ")
     # word3 = input("Third word: ")
     # compare_words(word1, word2, word3)
-    arabic_number = input("Enter arabic_number: ")
-    print(change_to_roman_number(arabic_number))
+    # arabic_number = input("Enter arabic_number: ")
+    # print(change_to_roman_number(arabic_number))
+    area = area_from_coordinates()
 
+    print("The area from given coordinates: %0.1f" % area)
 
 main()
